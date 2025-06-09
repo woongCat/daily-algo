@@ -4,6 +4,8 @@
 
 # 길이가 M 이상인 단어만 외움
 
+# pypy3로 풀면 되는 문제
+
 N, M = map(int, input().split())
 words = {}
 
@@ -22,3 +24,10 @@ sorted_words = sorted(
 
 for word, count in sorted_words:
     print(word)
+
+# 이게 더 빠르다
+# preprocessed = [(-count, -len(word), word) for word, count in words.items()]
+# preprocessed.sort()
+
+# for _, _, word in preprocessed:
+#     print(word)
